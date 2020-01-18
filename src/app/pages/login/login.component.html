@@ -1,0 +1,55 @@
+
+<div class="container">
+<div>
+  <div>
+    <h2 style="color:#e14eca;"> Application<br> Login Page</h2>
+  </div>
+</div>
+<div>
+  <div class="col-md-6">
+						<div class="card">
+							<div class="card-body">
+									<h4 class="card-title text-center">Iniciar Sesión</h4>
+						<form #loginForm=ngForm >
+								<div class="text-center">
+							<div>
+								<div>
+								<div class="input-group col-md-6">
+										<span><i class="tim-icons icon-single-02"></i></span>
+								</div>
+									<input class="form-control" name="username" [(ngModel)]="usuario.email" placeholder="Email" type="email" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<div>
+									<div class="input-group col-md-6">
+										<span><i class="tim-icons icon-single-02"></i></span>
+									</div>
+									<input class="form-control" name="password" [(ngModel)]="usuario.password" placeholder="Password" type="password" required>
+								</div>
+              				</div>
+										</div>
+							<div class="text-center">
+
+                  <button type="submit" class="btn btn-primary my-4" (click)="login()" [disabled]="!loginForm.valid || loading">
+                      <i [ngClass]="{'': !loading, 'fa-sync-alt fa-spin': loading}"  class="fa "></i>
+                      <span *ngIf="!loading">Iniciar Sesión</span>
+                      <span *ngIf="loading">Iniciando</span>
+                    </button>
+							</div>
+							 <div class="alert alert-primary alert-dismissible fade show mt-4" role="alert" *ngIf="errorCredenciales">
+								<button (click)="close()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true" >×</span>
+								</button>
+
+								<span class="alert-inner--text"><strong>Ups!</strong>
+								<p>Credenciales incorrectas</p>
+								</span>
+							</div>
+						</form>
+					</div>
+					</div>
+				
+</div>
+</div>
+</div>
